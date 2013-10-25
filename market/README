@@ -1,0 +1,28 @@
+Dependencies can be found in dependencies.txt which
+is automatically generated using...
+
+> pip freeze > dependencies.txt
+
+...and can be installed using...
+
+> pip install -r dependencies.txt
+
+This project makes use of various projects including...
+Zero Install, http://www.0install.net/
+Django, https://www.djangoproject.com/
+South, http://south.aeracode.org/
+Bootstrap, http://twitter.github.io/bootstrap/index.html
+Pip, https://pypi.python.org/pypi/pip
+virtualenv, https://pypi.python.org/pypi/virtualenv
+Django-Crispy-Forms, https://github.com/maraujop/django-crispy-forms
+Django-Parsley, https://github.com/agiliq/Django-parsley
+defusedxml, https://pypi.python.org/pypi/defusedxml/
+httplib2, https://code.google.com/p/httplib2/
+Haystack, http://haystacksearch.org
+Whoosh, https://bitbucket.org/mchaput/whoosh/wiki/Home
+Django-Generic-Ratings, https://pypi.python.org/pypi/django-generic-ratings
+
+Expected to make use of...
+Django-Ratelimit, https://pypi.python.org/pypi/django-ratelimit/
+
+A big thank you to all of them and others.

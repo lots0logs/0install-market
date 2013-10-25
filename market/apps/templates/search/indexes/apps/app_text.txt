@@ -1,0 +1,4 @@
+{{ object.name }}
+{{ object.uploader.username }}
+{{ object.homepage }}
+{{ object.description }}

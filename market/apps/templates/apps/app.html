@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.rating.css' %}"/>
+<script src="{% static 'js/jquery.rating.pack.js' %}"></script>
+<link rel="zeroinstall" href="{{app.xml}}">
+{% endblock head %}
+
+{% block body %}
+<div class="container"><div class="body-content">
+
+<h1>{{ app.name }} <small class="text-muted">by {{ app.uploader.username }}</small></h1>
+<p><a href="{{ app.homepage }}">{{ app.homepage }}</a></p>
+
+<p>{{ app.description }}</p>
+
+<form method="post" class="form-review" id="id-form-review" action="/app/id/{{ app.id }}/">
+<input type="hidden" value="owVCzKZrDXjxobD5cMMIMJqa6UngJaX2" name="csrfmiddlewaretoken">
+
+<div class="control-group" id="div_id_rating">
+  <label class="control-label requiredField" for="id_rating_0">Rating<span class="asteriskField">*</span></label>
+
+  <div class="controls">
+    <label class="radio"><input type="radio" value="1" id="id_rating_1" name="rating" class="star"></label>
+    <label class="radio"><input type="radio" value="2" id="id_rating_2" name="rating" class="star"></label>
+    <label class="radio"><input type="radio" value="3" id="id_rating_3" name="rating" checked="checked" class="star"></label>
+    <label class="radio"><input type="radio" value="4" id="id_rating_4" name="rating" class="star"></label>
+    <label class="radio"><input type="radio" value="5" id="id_rating_5" name="rating" class="star"></label>
+  </div>
+</div>
+
+<div class="control-group" id="div_id_text">
+  <label class="control-label " for="id_text">Review</label>
+
+  <div class="controls">
+    <textarea rows="10" name="text" id="id_text" data-maxlength="500" cols="40" class="textarea"></textarea>
+  </div>
+</div>
+
+<div class="form-actions">
+  <input type="submit" id="submit-id-submit" class="btn btn-primary" value="Submit" name="submit">
+</div>
+</form>
+
+{% if user.is_authenticated %}
+<form method="post" class="form-review" id="id-form-review" action="/app/id/3/">
+<input type="hidden" value="owVCzKZrDXjxobD5cMMIMJqa6UngJaX2" name="csrfmiddlewaretoken">
+
+<div class="control-group" id="div_id_rating">
+<label class="control-label requiredField" for="id_rating_0">Rating<span class="asteriskField">*</span></label>
+  <div class="controls">
+        <input type="radio" value="1" id="id_rating_1" name="rating" class="star">
+        <input type="radio" value="2" id="id_rating_2" name="rating" class="star">
+        <input type="radio" value="3" id="id_rating_3" name="rating" checked="checked" class="star">
+        <input type="radio" value="4" id="id_rating_4" name="rating" class="star">
+        <input type="radio" value="5" id="id_rating_5" name="rating" class="star">
+  </div>
+</div>
+
+<div class="control-group" id="div_id_text">
+<label class="control-label " for="id_text">Review</label>
+  <div class="controls">
+        <textarea rows="10" name="text" id="id_text" data-maxlength="500" cols="40" class="textarea"></textarea>
+  </div>
+</div>
+
+<div class="form-actions">
+  <input type="submit" id="submit-id-submit" class="btn btn-primary" value="Submit" name="submit">
+</div>
+</form>
+{% endif %}
+
+</div></div>
+{% endblock body %}

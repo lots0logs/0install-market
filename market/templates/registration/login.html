@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+{{ block.super }}
+<script src="{% static 'js/parsley.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/form-signin.css' %}"/>
+{% endblock head %}
+
+{% block body %}
+<div class="container"><div class="body-content text-center">
+  <h1>Please sign in</h1>
+
+{% if error %}
+<div class="alert">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>{{ error }}</strong>
+</div>
+{% endif %}
+
+  {% crispy form form.helper %}
+
+<p><a href="{% url 'register' %}">Don't have an account?</a></p>
+</div></div>
+{% endblock %}
+
+

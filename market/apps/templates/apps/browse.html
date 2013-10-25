@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+<div class="container"><div class="body-content">
+<h1>Browse Apps</h1>
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/network.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Network' %}">Network &raquo;</a></p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/video.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'AudioVideo' %}">Audio/Video &raquo;</a></p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/package_graphics.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Graphics' %}">Graphics &raquo;</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/joystick.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Games' %}">Games &raquo;</a></p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/wordprocessing.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Office' %}">Office &raquo;</a></p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/preferences_other.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Settings' %}">Settings &raquo;</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/package_education.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Education' %}">Education &raquo;</a></p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/tool.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Utilities' %}">Utilities &raquo;</a></p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/binary.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Development' %}">Development &raquo;</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/package_science.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'Science' %}">Science &raquo;</a></p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <p><img class="img-thumbnail" src="{% static 'images/system.png' %}"/></p>
+            <p><a class="btn btn-default btn-large" href="{% url 'apps_category' 'System' %}">System &raquo;</a></p>
+          </div>
+        </div>
+</div></div>
+{% endblock body %}

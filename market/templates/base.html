@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  {% block head %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet" type="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Market</title>
+  {% endblock head %}
+</head>
+<body>
+{% block navbar %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Marketplace</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% block in_navbar %}
+            <li><a href="{% url 'apps_browse' %}">Browse Apps</a>
+            <li><a href="{% url 'apps_latest' %}">Latest Apps</a>
+            <li><a href="/contact/">Contact</a></li>
+            {% endblock in_navbar %}
+          </ul>
+            {% if user.is_authenticated %}
+            <div class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle pull-right" data-toggle="dropdown"><p class="navbar-text">Signed in as {{ user.username }} <b class="caret"></b></p></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li><a tabindex="-1" href="#">Profile</a></li>
+                <li><a tabindex="-1" href="{% url 'apps_submit' %}">Submit App</a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="{% url 'logout'%}">Log out</a></li>
+              </ul>
+            </div>
+            {% else %}
+            <a href="{% url 'login' %}">
+            <button type="button" class="btn btn-primary navbar-btn pull-right">Sign in</button>
+            </a>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+{% endblock navbar %}
+
+{% block body %}
+{% endblock body %}
+
+{% block footer %}
+<hr>
+<div class="container">
+<footer>
+  <p>&copy; Brian Shannon 2013</p>
+</footer>
+</div>
+{% endblock footer %}
+</body>
+</html>
